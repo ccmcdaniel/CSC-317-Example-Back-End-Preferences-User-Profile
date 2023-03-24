@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Profile_Preferences_User_Page.Pages.ProfileSetupPage"
+             Title="Setup Profile"
+             NavigationPage.HasBackButton="False">
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Spacing="10">
+        <Label Text="Enter your Name" HorizontalOptions="Center" FontSize="25"/>
+        <HorizontalStackLayout Margin="0, 0, 0, 50" Spacing="20">
+            <Entry Placeholder="First" MinimumWidthRequest="200" x:Name="txtFirstName"/>
+            <Entry Placeholder="Last" MinimumWidthRequest="200" x:Name="txtLastName"/>
+        </HorizontalStackLayout>
+
+        <Label Text="Enter your Birthday" HorizontalOptions="Center" FontSize="25"/>
+        <HorizontalStackLayout Margin="0, 0, 0, 50">
+            <DatePicker x:Name="dteBirthday" MinimumWidthRequest="420"
+                        DateSelected="MarkBirthday"/>
+        </HorizontalStackLayout>
+        
+        <Label Text="Pick a Color Theme:" HorizontalOptions="Center" FontSize="25"/>
+       
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <!--Absolute Layout displays items based off relative coordinates.
+                This is used so that the radio button appears in front of the 
+                Rectangle when looking at it, giving the impression that 
+                the radio button is "inside" the rectangle.-->
+            
+            <AbsoluteLayout >
+                <!--Rectangle is a simple box. 
+                    You can set the border properties as followed:
+                    Stroke- defines the border color
+                    StrokeThickness - border thickness
+                    RadiusX, RadiusY - Can be used to make the corners rounded.
+                -->
+                <Rectangle 
+                    Stroke="#774444" 
+                    Fill="#FF8888"
+                    StrokeThickness="10"
+                    RadiusX="5"
+                    RadiusY="5"
+                    MinimumHeightRequest="80" MinimumWidthRequest="80"/>
+                
+                <!--Since the radio buttons are not nested in the same layout,
+                    you need to expicitly define their group in order enforce
+                    only 1 theme to be selected.
+                -->
+                <RadioButton Margin="5, 0, 0, 0" 
+                             GroupName="grpTheme" x:Name="rdoRed" />
+            </AbsoluteLayout>
+            <AbsoluteLayout>
+                <Rectangle 
+                    Stroke="#447744" 
+                    Fill="#88ff88"
+                    StrokeThickness="10"
+                    RadiusX="5"
+                    RadiusY="5"
+                    MinimumHeightRequest="80" MinimumWidthRequest="80"/>
+                <RadioButton Margin="5, 0, 0, 0" 
+                             GroupName="grpTheme" x:Name="rdoGreen" />
+            </AbsoluteLayout>
+
+            <AbsoluteLayout>
+                <Rectangle 
+                    Stroke="#444477" 
+                    Fill="#8888ff"
+                    StrokeThickness="10"
+                    RadiusX="5"
+                    RadiusY="5"
+                    MinimumHeightRequest="80" MinimumWidthRequest="80"/>
+                <RadioButton Margin="5, 0, 0, 0" 
+                             GroupName="grpTheme" x:Name="rdoBlue" />
+            </AbsoluteLayout>
+        </HorizontalStackLayout>
+
+        <Button Text="Finish" Margin="0, 20, 0, 0" Clicked="FinishProfile"/>
+    </VerticalStackLayout>
+</ContentPage>

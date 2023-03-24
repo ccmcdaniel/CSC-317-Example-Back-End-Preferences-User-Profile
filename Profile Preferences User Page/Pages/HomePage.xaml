@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Profile_Preferences_User_Page.Pages.HomePage"
+             NavigationPage.HasBackButton="False">
+    <VerticalStackLayout
+        x:Name="layoutPageStack"
+        HorizontalOptions="Center"
+        BackgroundColor="White"
+        VerticalOptions="FillAndExpand"
+        MinimumWidthRequest="450"
+        >
+        <Label HorizontalOptions="Center" TextColor="red" x:Name="lblName" FontSize="35" Text="Name Here"/>
+        <Label  HorizontalOptions="Center" TextColor="Blue" x:Name="lblBirthday" FontSize="20" Text="Birthday Here"/>
+    </VerticalStackLayout>
+</ContentPage>
